@@ -3,6 +3,7 @@ require('dotenv').config()
 const workoutRoutes = require('./routes/workout') 
 const mongoose = require('mongoose') 
 const cors = require('cors')
+const userRoutes = require('./routes/user')
 
 // express app - create a server
 const app = express()
@@ -13,6 +14,7 @@ app.use(express.json()) // transform json -> Object
 
 // routes
 app.use("/api/workouts", workoutRoutes)
+app.use("/api/user", userRoutes)
 // (the name u want to the route, file name)
 
 async function connectDB() {
